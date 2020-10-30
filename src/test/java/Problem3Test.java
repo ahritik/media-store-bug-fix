@@ -4,15 +4,28 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class Problem3Test {
+
+
     @Test
     public void catchTheBugInBook() {
-        // quiz
+        BookFiction b = new BookFiction("ti1", "au1","fantasy");
+        BookFiction bc = new BookFiction(b);
+        assertTrue(b.equals(bc));
+        bc.setAuthor("au1");
+        bc.setTitle("the new ti1");
+        assertTrue(b.equals(bc));
     }
 
     @Test
     public void catchTheBugInMovie() {
-        // quiz
+        MovieAction m = new MovieAction("PG13", "ti1");
+        MovieAction mc = new MovieAction(m);
+        assertTrue(m.equals(mc));
+        mc.setRating("R");
+        mc.setTitle("ti1 unrated");
+        assertTrue(m.equals(mc));
     }
+
 
     // DO NOT REMOVE OR CHANGE ANYTHING BELOW THIS!
     @Test
